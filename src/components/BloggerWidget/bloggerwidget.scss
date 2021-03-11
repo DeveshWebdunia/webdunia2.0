@@ -1,0 +1,66 @@
+
+.blog_w_block{
+    text-align: center;
+    margin:0 12px;
+    h2{font-size:14px; font-weight:bold;margin-bottom: 65px; line-height: 23px;        min-height: 45px;}
+    caption{
+        p{color:#000; font-size:15px; line-height:24px;margin:0;}
+        .blogger_w_img {
+            position: absolute;
+            top: -50px;
+            text-align: center;
+            left: 0;
+            right: 0;
+            
+                span {
+                    display: inline-block;
+                    width: 90px;
+                    height: 90px;
+                    overflow: hidden;
+                    border-radius: 90px;
+                }
+                strong{display: block;color:#A50404; font-size:15px;padding-bottom: 5px;}
+            
+        }
+        background-color:#F5F5F5;
+        display: block;
+        text-align: center;
+        padding: 70px 15px 15px 15px;
+        border-radius: 5px;
+        position: relative;
+    }
+}
+
+
+.blogger_w_slider{
+    padding:20px 20px 0 20px;
+    .slick-arrow{
+        position: absolute;
+        z-index: 5;
+        border: none;
+        background: rgba(255, 255, 255, .4);
+        width:26px;
+        height: 65px;
+        text-indent: -110px;
+        overflow: hidden;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+    .slick-prev {
+        left:-20px;
+        background-image:url(../../assets/img/svg/left-arrow.svg);
+        background-size:10px;
+        background-repeat: no-repeat;
+        background-position:8px 25px;
+        
+    }
+    .slick-next {
+        right:-20px;
+        background-image:url(../../assets/img/svg/right-arrow.svg);
+        background-size:10px;
+        background-repeat: no-repeat;
+        background-position:9px 25px;
+        
+    }
+}

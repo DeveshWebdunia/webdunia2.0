@@ -1,0 +1,150 @@
+
+
+
+
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {  }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) {  }
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+
+    // .top_news{
+    //     flex: 0 0 100%;
+    // }
+    // .h_r_col {
+    //     flex: 0 0 100%;
+    // }
+    // .h_mid_col{overflow: hidden;}
+    // .wd_navigation ul{
+    //     white-space:nowrap; overflow-x: scroll;
+    //     li{float:none; display:inline-block;
+    //         a{
+    //             font-size: 17px;
+    //             padding: 5px 12px;
+    //         }
+    //     }
+    // }
+    // .wd_date{display:none;}
+    // .wd_lang ul li span{display:none;}
+    // .wd_social_link li span{display:none;}
+    // .h_menu_sect {padding-left: 0px;}
+    // .wd_lang{
+    //     overflow: hidden;
+    //     ul{overflow-x: scroll;}
+    // }
+    // .ads_336 {
+    //     flex: 0 0 100%;
+    // }
+    // .footer_sect .col{flex:0 0 100%;}
+    // .footer_sect .col-3{flex:0 0 100%; max-width:100%;}
+    // .wd_logo a img{width:80px;}
+    // .dropdown_menslink{width:100%;}
+    // .t_n_slider .tns_image{height:auto;}
+    // .footer_about {margin: 0 12% 20px 12%; }
+
+ }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+    // .top_news{
+    //     flex: 0 0 100%;
+    // }
+    // .h_r_col {
+    //     flex: 0 0 100%;
+    // }
+    // .h_mid_col{overflow: hidden;}
+    // .wd_navigation ul{
+    //     white-space:nowrap; overflow-x: scroll;
+    //     li{float:none; display:inline-block;
+    //         a{
+    //             font-size: 17px;
+    //             padding: 5px 12px;
+    //         }
+    //     }
+    // }
+    // .wd_date{display:none;}
+    // .wd_lang ul li span{display:none;}
+    // .wd_social_link li span{display:none;}
+    // .h_menu_sect {padding-left: 0px;}
+    // .wd_lang{
+    //     overflow: hidden;
+    //     ul{overflow-x: scroll;}
+    // }
+    // .ads_336 {
+    //     flex: 0 0 100%;
+    // }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    // .top_news{
+    //     flex: 0 0 100%;
+    // }
+    // .h_r_col {
+    //     flex: 0 0 100%;
+    // }
+    // .h_mid_col{overflow: hidden;}
+    // .wd_navigation ul{
+    //     white-space:nowrap; overflow-x: scroll;
+    //     li{float:none; display:inline-block;
+    //         a{
+    //             font-size: 17px;
+    //             padding: 5px 12px;
+    //         }
+    //     }
+    // }
+    // .wd_date{display:none;}
+    // .wd_lang ul li span{display:none;}
+    // .wd_social_link li span{display:none;}
+    // .h_menu_sect {padding-left: 0px;}
+    // .dropdown_menslink{    width: 33.33%;}
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.97px) { 
+
+    // .wd_navigation ul li a{
+    //     font-size: 17px;
+    //     padding: 5px 12px;
+    // }
+    // .top_news{
+    //     flex: 0 0 600px;
+    // }
+    // .wd_lang ul li span{display:none;}
+    // .tranding_news{order:3;}
+    // .corona_tracker_sect .coron_t_col:first-child {
+    //     flex: 0 0 300px;
+    // }
+    // .wd_social_link li span{display:none;}
+    // .h_r_col{flex: 0 0 320px;}
+    // .h_mid_col{overflow: hidden;}
+    // .wd_navigation ul{
+    //     white-space:nowrap; overflow-x: scroll;
+    //     li{float:none; display:inline-block;}
+    // }
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+    .container{max-width:1300px;}
+}
+
+// XXL SIZE 
+@media (min-width:1199.98px) and (max-width:1300px) { 
+
+   
+    // .wd_navigation ul li a{
+    //     font-size: 17px;
+    //     padding: 5px 12px;
+    // }
+    // .top_news{
+    //     flex: 0 0 530px;
+    // }
+    
+}

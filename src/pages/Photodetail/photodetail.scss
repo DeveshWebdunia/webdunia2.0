@@ -1,0 +1,251 @@
+@import "../../assets/scss/variables";
+
+.photo_d_title{
+    margin: 10px 0 10px 0;
+    
+    display:flex;
+    padding:15px;
+    border-bottom:1px solid rgba(255, 255, 255, .15);
+    h2{
+        margin:0;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 36px;
+        flex-grow: 1;
+        flex-basis:0;
+        color:#fff;
+        padding-left: 5px;
+    }
+    .p_d_social{
+        flex:0 0 156px;
+        height:42px;
+    }
+}
+
+.pho_slid_large{
+    background: #333;
+    position: relative;
+    text-align: center;
+    padding: 5px;
+    margin-bottom:8px;
+    border-radius:5px;
+    .slick-slide img{
+        max-height: 450px;
+        margin: 0 auto;
+    }
+    caption{
+        padding: 15px;
+        background-color: #111;
+        display: block;
+        color: #fff;
+        font-size: 16px;
+        border-radius:3px;
+        margin-top: 5px;
+    }
+    .slick-arrow{
+        position: absolute;
+        z-index: 5;
+        border: none;
+        background: rgba(255, 255, 255, .4);
+        width: 35px;
+        height: 65px;
+        text-indent: -110px;
+        overflow: hidden;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+    .slick-prev {
+        left:0px;
+        background-image:url(../../assets/img/svg/left-arrow-w.svg);
+        background-size:10px;
+        background-repeat: no-repeat;
+        background-position:8px 25px;
+        border-radius:0 40px 40px 0;
+    }
+    .slick-next {
+        right:0px;
+        background-image:url(../../assets/img/svg/right-arrow-w.svg);
+        background-size:10px;
+        background-repeat: no-repeat;
+        background-position:18px 25px;
+        border-radius: 40px 0 0 40px;
+    }
+}
+
+.pho_slid_thumb {
+    .slick-arrow{
+        position: absolute;
+        z-index: 5;
+        border: none;
+        background: rgba(0, 0, 0, 0.6);
+        width: 25px;
+        height: 40px;
+        text-indent: -110px;
+        overflow: hidden;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+    }
+    .slick-prev {
+        left:0px;
+        background-image:url(../../assets/img/svg/left-arrow-w.svg);
+        background-size:8px;
+        background-repeat: no-repeat;
+        background-position:6px 14px;
+        
+    }
+    .slick-next {
+        right:0px;
+        background-image:url(../../assets/img/svg/right-arrow-w.svg);
+        background-size:8px;
+        background-repeat: no-repeat;
+        background-position:9px 14px;
+        
+    }
+    .p_d_thumb {
+        /* width: 145px; */
+        display: block;
+        overflow: hidden;
+        /* height: 100px; */
+        border-radius: 5px;
+        margin: 0 5px;
+        background-color:#000;
+        img {
+            max-width: 100%;
+        }
+        
+    }
+    .slick-current img {
+        opacity: .5;
+    }
+}
+
+
+
+    .p_d_social{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-align: center;
+        li{
+            display:inline-block;
+            margin:0 5px;
+            a{
+                display: block;
+                width: 42px;
+                height: 42px;
+                border-radius: 50px;
+                text-align: center;
+            }
+            
+            .art_fb_icon{
+                background:url(../../assets/img/svg/facebook.svg);
+                background-size: 12px;
+                background-repeat: no-repeat;
+                background-position: 14px 10px;
+                background-color:#4968AB;
+            }
+            .art_tw_icon{
+                background:url(../../assets/img/svg/twitter.svg);
+                background-size: 23px;
+                background-repeat: no-repeat;
+                background-position:10px 13px;
+                background-color:#01B0EF;
+            }
+            .art_whapp_icon{
+                background:url(../../assets/img/svg/whatsapp-w.svg);
+                background-size: 24px;
+                background-repeat: no-repeat;
+                background-position: 9px 9px;
+                background-color:#2CB742;
+            }
+            
+        }
+    }
+
+    .photo_detail_wrap{
+        background-color:#111;
+        border-radius:5px;
+    }
+    .photo_d_content{
+        padding:0 15px 15px 15px;
+        color:#fff;
+        
+    }
+
+    .photo_gall_list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        column-count: 3;
+        column-gap: 0;
+        @include media-breakpoint-down(sm){column-count:2;}
+        a{
+            margin:2px 2px 4px 2px;
+            display: block;
+            position: relative;
+            &:hover{
+                opacity:.4;
+                &::after{
+                    content:"";
+                    
+                    position: absolute;
+                    top:10px;
+                    right:0;
+                    bottom:0;
+                    left:10px;
+                    z-index: 1;
+                    
+                    background-image:url(../../assets/img/svg/camera.svg);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 22px;
+                    width: 22px;
+                    opacity: 1;
+                    height: 21px;
+                }
+            }
+            img{max-width: 100%; }
+        }
+        
+        li{
+            margin:2px 2px 4px 2px;
+            a{
+                display: block;
+                border-radius:6px;
+                position: relative;
+                
+                &:hover{
+                    
+                    &::after{
+                        content:"";
+                        background-color:rgba(0, 0, 0, .5);
+                        position: absolute;
+                        top:0;
+                        right:0;
+                        bottom:0;
+                        left:0;
+                        z-index: 1;
+                        
+                        background-image:url(../../assets/img/svg/camera.svg);
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 30px;
+                        -webkit-transition: all .2s ease-in-out;
+                        -moz-transition: all .2s ease-in-out;
+                        -ms-transition: all .2s ease-in-out;
+                        -o-transition: all .2s ease-in-out;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+                img{
+                    max-width:100%;
+                   
+                }
+            }
+            
+            
+        }
+        
+    }

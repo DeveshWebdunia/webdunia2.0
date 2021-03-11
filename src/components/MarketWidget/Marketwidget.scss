@@ -1,0 +1,60 @@
+
+.market_h_w{
+    label::before{background-color:#1B8EF2!important;}
+    .n_readmore a::after{background-color:#1B8EF2!important;}
+}
+.market_widget_sect{
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        
+        li{
+            background: #F2F2F2;
+            padding:12px 12px;
+            display:flex;
+            flex-wrap: wrap;
+            &:nth-child(even){
+                background-color:#fff;
+            }
+            &:first-child{border-radius:5px 5px 0 0;}
+            &:last-child{border-radius:0 0 5px 5px;}
+            .m_w_name{
+                font-size:17px; color:#000; font-weight: bold; flex-basis:0; flex-grow:1;
+            }
+            .m_w_numb{
+                font-size:18px; color:#666; flex:0 0 80px; text-align: right;
+            }
+            .m_w_status{
+                font-size:18px; color:#666; position: relative; flex:0 0 90px; text-align: right; padding:0 26px 0 0;
+                &::after{
+                    content:"";
+                    position: absolute;
+                    width: 16px;
+                    height: 15px;
+                    display: block;
+                    background-size: 15px;
+                    background-repeat: no-repeat;
+                    right: 0;
+                    top: 6px;
+                }
+            }
+            .m_w_status.up{
+                color:#49CC1A;
+                &::after{
+                    content:"";
+                    background-image:url(../../assets/img/svg/up-arrow-b.svg);
+                    position:absolute;
+                }
+            }
+            .m_w_status.down{
+                color:#FF1313;
+                &::after{
+                    content:"";
+                    background-image:url(../../assets/img/svg/down-arrow-b.svg);
+                    position:absolute;
+                }
+            }
+        }
+    }
+}

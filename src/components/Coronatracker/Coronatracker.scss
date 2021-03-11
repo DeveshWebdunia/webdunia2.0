@@ -1,0 +1,88 @@
+@import "../../assets/scss/variables";
+
+.corona_tracker_sect {
+    background: #fff;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    align-items: center;
+    @include media-breakpoint-down(md){border-radius:10px;}
+    h2 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000;
+        margin: 0;
+        position: relative;
+        padding: 7px 5px 7px 45px;
+        &::before{
+            content:"";
+            background:url(../../assets/img/coronav-icon.png);
+            width: 34px;
+            height: 34px;
+            position: absolute;
+            left: 2px;
+            top: 1px;
+        }
+    }
+    .coro_t_link {
+        border: 1px solid #a50404;
+        font-size: 14px;
+        padding: 6px 7px;
+        display: block;
+    }
+    .coron_t_col {
+        padding:7px;
+        flex-basis: 0;
+        flex-grow: 1;
+        &:first-child{
+            flex:0 0 320px;
+            @include media-breakpoint-down(lg){flex:0 0 293px;}
+        }
+        &:last-child{ flex:0 0 152px; padding-right: 25px;    }
+        &:nth-child(2){
+            @include media-breakpoint-down(md){
+                order:3; flex-basis:100%;
+            }
+            
+        }
+    }
+    
+}
+
+.corona_t_info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 0;
+    flex-grow: 1;
+    .confirm{
+        strong{color:#EAB317;}
+    }
+    .active_case{
+        strong{color:#FF6900;}
+    }
+    .recovered{
+        strong{color:#27CF16;}
+    }
+    .deaths{
+        strong{color:#FF0000;}
+    }
+    span{
+        padding:0 10px;
+        width: 25%;
+        @include media-breakpoint-down(sm){width:50%;}
+        b {
+            color: #6C6C6C;
+            font-size: 13px;
+            display: block;
+            line-height: 12px;
+            padding-bottom: 5px;
+            font-weight:normal;
+
+        }
+        strong{
+            font-size:21px; color:#000; line-height:21px;
+        }
+    }
+}

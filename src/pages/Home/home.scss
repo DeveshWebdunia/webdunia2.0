@@ -1,0 +1,37 @@
+@import "../../assets/scss/variables";
+
+.top_news {
+    flex:0 0 45.39%;
+    @include media-breakpoint-down(lg){
+        flex:0 0 62.5%;
+    }
+    @include media-breakpoint-down(md){flex:0 0 100%}
+}
+.ads_336 {
+    flex: 0 0 355px;
+    @include media-breakpoint-down(sm){flex:0 0 100%}
+}
+.tranding_news{
+    @include media-breakpoint-down(lg){order:3;}
+}
+
+.h_l_col {
+}
+.h_r_col {
+    flex: 0 0 330px;
+    @include media-breakpoint-down(md){flex:0 0 100%}
+}
+
+
+
+.h_video_section{
+    background-color:#DF1A1A; padding:20px 0;
+    .n_w_p_head h2::before{background: #fff;}
+    .n_w_p_head h2 label{
+        background-color:#DF1A1A;
+        color:#fff;
+    }
+    .n_w_p_head h2 label::before{background-color:#fff;}
+    .n_w_p_head h2 .n_readmore a{background: #DF1A1A;color:#fff;}
+    .n_w_p_head h2 .n_readmore a::after{box-shadow: 0px 0px 1px 1px #fff; background-color: transparent;}
+}

@@ -1,0 +1,168 @@
+
+.cricketupdate_panel {
+    background-color: #085875;
+    background-image:url(../../assets/img/crick_bg.png);
+    background-size: cover;
+    border-radius: 5px;
+    position: relative;
+    &::before{
+        content: "";
+        background-color: #085875;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: .9;
+        z-index: 0;
+        border-radius: 5px;
+    }
+    .c_u_p_head{
+        background:rgba(0, 0, 0, .15);
+        padding: 10px 12px;
+        position: relative;
+        
+        h3 {
+            color: #fff;
+            font-size: 18px;
+            position: relative;
+            margin: 0;
+            &::before{
+                content:"";
+                background-image:url(../../assets/img/cricket_icon.png);
+                width: 25px;
+                height: 26px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right:10px;
+            }
+        }
+    }
+    .c_u_p_body {
+        padding: 10px 12px; position: relative;
+    }
+}
+
+
+
+.cricket_accordion{
+   
+.panel-wrap{
+    .panel-header{
+        margin-bottom:6px;
+        button{
+            background: rgba(0, 0, 0, 0.25);
+            border: none;
+            color: #fff;
+            font-size: 14px;
+            padding:4px 12px;
+            border-radius: 3px;
+            position: relative;
+            z-index:1;
+            &::after{
+                content:"";
+                background:url(../../assets/img/svg/down-arrow-w.svg);
+                position: absolute;
+                right: 10px;
+                width: 14px;
+                height: 8px;
+                background-size: 14px;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                z-index: 0;
+            }
+        }
+    }
+    &.active-panel{
+        .panel-header{
+            button{
+                &::after{
+                    content:"";
+                    background:url(../../assets/img/svg/up-arrow-w.svg)!important;
+                    position: absolute;
+                    right: 10px;
+                    width: 14px;
+                    height: 8px;
+                    background-size: 14px;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    z-index: 0;
+                }
+            }
+        }
+    }
+}  
+    
+    .panel-body{
+        .team_block{
+            border:1px solid rgba(255, 255, 255, .2);
+            margin-bottom: 8px;
+            border-radius: 3px;
+            padding: 8px;
+            .team_b_l {
+                float: left;
+                span {
+                    width: 32px;
+                    height: 22px;
+                    background: #fff;
+                    text-align: center;
+                    display: block;
+                    padding:1px 1px;
+                    img {
+                        vertical-align: top;    max-width: 100%;
+                    }
+                }
+            }
+            .team_b_r {
+                display: flex;
+                padding-left: 10px;
+                .team_inf_col{
+                    h2{color:#fff; font-size:16px; margin:2px 0 3px 0;font-weight: bold;}
+                    .team_score {
+                        color: #ccc;
+                        font-size: 14px;
+                        b{color:#fff;}
+                    }
+                }
+            }
+            .team_player {
+                color: #ccc;
+                font-size: 14px;
+                padding-top: 6px;
+                span{
+                    width: 17px;
+                    display: inline-block;
+                    vertical-align: text-bottom;
+                    margin-right: 4px;
+                    img{max-width:100%;}
+                }
+            }
+        }
+    }
+}
+
+.team_status{margin-bottom: 10px;
+    p{
+        color:#fff; font-size:14px;margin: 0;
+    }
+    .fullscore_btn{
+        color: #FFE330;
+        font-weight: 600;
+        font-size: 15px;
+    }
+}
+.cricklive {
+    background: #E62248;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    padding: 1px 5px;
+    border-radius: 1px;
+    font-weight: 600;
+}

@@ -1,0 +1,163 @@
+@import "../../assets/scss/variables";
+.footer_top_sect {
+    background: #262626;
+    padding:20px 0;
+    .apps_link {
+        display: block;
+        text-align: center;
+        a {
+            display: inline-block;
+            margin: 0 15px;
+            img{width: 180px;}
+        }
+    }
+}
+
+.footer_sect {
+    background: #373737;
+    border-top: 1px solid #474747;
+    padding: 20px 0;
+}
+
+.footer_widget{
+    margin:0 12% 20px 12%;
+    h3{color:#fff; font-size:18px; font-weight:bold;margin: 0 0 10px 0;}
+    .footer_menus{
+        margin:0;
+        padding:0;
+        list-style:none;
+        li{
+            border-bottom:1px solid rgba(255, 255, 255, .1);
+            &:last-child{border:none;}
+            a{
+                color:#ddd; font-size:15px;display: block; padding: 5px 0px;
+                &.dropdown-toggle::after{
+                    content:"";
+                    background-image:url(../../assets/img/svg/down-arrow-w.svg);
+                    width: 12px;
+                    height: 7px;
+                    position: absolute;
+                    right: 0;
+                    border: none;
+                    background-size: 12px;
+                    margin: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                    opacity: .5;
+                    
+                }
+                
+            }
+            .dropdown-menu{
+                padding: 0;
+                background: #767676;
+                border-radius: 0;
+                .dropdown-item{
+                    padding: 6px 10px;
+                    border-bottom: 1px solid rgba(0, 0, 0, .2);
+                    color: #fff;
+                    &:last-child{border:none;}
+                    &:hover{background-color:#282828;}
+                }
+                
+            }
+        }
+    }
+}
+
+.footer_bottom_sect{
+    background-color:#282828;
+    .footer_menu_link {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        @include media-breakpoint-down(md){text-align: center;}
+        li{
+            display: inline-block;
+            a {
+                display: block;
+                color: #ddd;
+                font-size: 14px;
+                padding:8px 10px;
+            }
+        }
+        
+    }
+    .copyright_text {
+        font-size: 13px;
+        color: #ddd;
+        text-align: right;
+        padding: 9px 5px;
+        margin: 0;
+        @include media-breakpoint-down(md){text-align: center;}
+    }
+}
+
+.footer_about{
+    padding:20px 0 0 0;
+    @include media-breakpoint-down(md){
+        text-align: center;
+        padding:0px 0 10px 0;
+        .f_social_block{margin:0;}
+    }
+    span {
+        opacity: .5;
+        @include media-breakpoint-down(md){display:none;}
+        img{max-width:100%;}
+    }
+}
+
+.f_social_block{
+    margin-top: 15px;
+    display: inline-block;
+    span{text-align:center; display: block;color:#ccc; font-size:14px; padding:10px 0;}
+    .f_follow_us{
+        margin:0;
+        padding:0;
+        list-style:none;
+        text-align: center;
+        
+        li{
+            margin:0 3px;
+            border: 1px solid #505050;
+            border-radius: 50px;
+            display: inline-block;
+            a{
+                color: #fff;
+                display: block;
+                width: 36px;
+                height: 36px;
+                border-radius: 50px;
+                opacity: .5;
+            }
+            .f_fb_icon{
+                background:url(../../assets/img/svg/facebook.svg);
+                background-size: 11px;
+                background-repeat: no-repeat;
+                background-position:12px 8px;
+            }
+            .f_tw_icon{
+                background:url(../../assets/img/svg/twitter.svg);
+                background-size: 21px;
+                background-repeat: no-repeat;
+                background-position: 8px 10px;
+            }
+            .f_yt_icon{
+                background:url(../../assets/img/svg/youtube.svg);
+                background-size: 19px;
+                background-repeat: no-repeat;
+                background-position:9px 11px;
+            }
+            .f_inst_icon{
+                background:url(../../assets/img/svg/insta.svg);
+                background-size: 19px;
+                background-repeat: no-repeat;
+                background-position:9px 9px;
+            }
+            
+        }
+    }
+}
+
+ 

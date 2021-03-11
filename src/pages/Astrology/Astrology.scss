@@ -1,0 +1,117 @@
+
+@import "../../assets/scss/variables";
+
+.astrology_container{
+    padding:15px;
+    background-color: #FEF2A9;
+    border-radius: 5px;
+}
+
+.astro_buttons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        width: 25%;
+        padding: 0 2px;
+        margin-bottom: 5px;
+        @include media-breakpoint-down(sm){
+            width: 50%;
+        }
+        a{
+            display: block;
+            
+            text-align: center;
+            color: #000;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 9px 7px;
+            border-radius: 3px;
+            box-shadow:0px 0px 0px 1px #A50404 inset;
+            @include media-breakpoint-down(sm){
+                font-size: 14px;
+            }
+            &:hover{
+                background-color:#A50404;color:#fff;
+            }
+        }
+        &.active{
+            a{background-color:#A50404; color:#fff;}
+        }
+    }
+}
+/*
+.daily_rashi a{background-color:#A8A5FF;}
+.week_rashi a{background-color:#7EF2D6;}
+.month_rashi a{background-color:#ADD86C;}
+.year_rashi a{background-color:#FFB98B;}
+*/
+.astro_head {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    align-items: center;
+    margin-bottom:10px;
+    h2{
+        color:#000;
+        margin:0;
+        font-size:20px;
+        font-weight: bold;
+    }
+}
+.astro_select_date {
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    span{color:#000; padding-right:5px; font-size:14px; font-weight: bold;}
+    select{
+        border:none;
+        color:#666;
+        font-size:14px;
+    }
+}
+
+.astro_block_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.astrology_block{
+    width: 47%;
+    position: relative;
+    margin-bottom:40px;
+    padding-left: 36px;
+    margin-left:1.5%;
+    margin-right:1.5%;
+    @include media-breakpoint-down(sm){
+        width:100%;
+        margin-bottom:20px;
+    }
+    .astro_content{
+        background-color: #fff;
+        border-radius:10px;
+        padding:15px 15px 15px 40px;
+      
+        h3{font-size:20px; margin:0; color:#000; font-weight: bold; padding-bottom: 5px;}
+        p{
+        color:#373737; font-size:15px; margin:0;
+        }
+    }
+    
+    .astro_icon {
+        width: 65px;
+        height: 65px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        border-radius: 50px;
+        left: 0;
+        padding:3px;
+        img{max-width:100%;}
+    }
+}

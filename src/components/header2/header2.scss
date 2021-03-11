@@ -1,0 +1,257 @@
+
+.h_top_sect {
+    border-top:3px solid #A50404;
+    background: #333;
+    background-image:url(https://images.hindi.news18.com/ibnkhabar/uploads/2020/03/headertbg-1.jpg);
+    background-size: cover;
+}
+.h_top_block {
+    padding:5px 0;
+    display: flex;
+    width: 100%;
+    flex-flow: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.wd_logo {
+    position: relative;
+    padding:0 15px 0 0;
+    a{
+        display: block;
+        background: #fff;
+        border-radius: 5px;
+        padding:5px 5px;
+       
+        img{width:115px;}
+    }
+}
+.wd_lang {
+    display: table-cell;
+    
+    vertical-align: top;
+    
+    ul {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        display:flex;
+        align-items: center;
+        li{
+            span {
+                align-items: center;
+                color: #fff;
+                font-size: 13px;
+                padding-right: 10px;
+            }
+            a {
+                display: block;
+                color: #fff;
+                padding:3px 12px;
+                font-size: 14px;
+                border-radius: 3px;
+            }
+            .active {
+                background: rgba(0, 0, 0, .2);
+            }
+        }
+        
+    }
+}
+
+
+.h_top_rightsect {
+    display: table-cell;
+    vertical-align: top;
+    
+}
+.h_menu_sect {
+    padding-left:5px;
+}
+.wd_social_link {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+    display: flex;
+    align-items: center;
+    li{
+        float: left;     
+        margin-left: 5px;
+        span{color:#fff;font-size: 14px; padding-right:5px;}
+        a {
+            display: block;
+            background-color: #fff;
+            width: 30px;
+            height: 30px;
+            border-radius:3px;
+
+        }
+    }
+}
+
+.fb_icon a{
+    background:url(../../assets/img/svg/fbicon.svg);
+    background-size: 11px;
+    background-repeat: no-repeat;
+    background-position: 9px 5px;
+}
+.tw_icon a{
+    background:url(../../assets/img/svg/twiticon.svg);
+    background-size: 21px;
+    background-repeat: no-repeat;
+    background-position: 5px 7px;
+}
+.int_icon a{
+    background:url(../../assets/img/svg/instaicon.svg);
+    background-size: 19px;
+    background-repeat: no-repeat;
+    background-position: 6px 6px;
+}
+.yout_icon a{
+    background:url(../../assets/img/svg/yticon.svg);
+    background-size: 22px;
+    background-repeat: no-repeat;
+    background-position: 4px 8px;
+}
+
+
+
+
+.header_sect{
+    background: #fff;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, .3);
+    position: relative;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+        .m_bar {
+            padding:12px 12px 12px 0;
+            >.dropdown{position: inherit;}
+            // a {
+            //     width: 32px;
+            //     height: 32px;
+            //     display: block;
+            //     padding: 3px;
+            // }
+            button{
+                width: 32px;
+                height: 32px;
+                display: block;
+                padding: 3px;
+                background: transparent;
+                border:none;
+                &:focus{outline: none; box-shadow:none; background: transparent;}
+                svg{width:23px;}
+            }
+            .dropdown-menu {
+                width:100%;
+                min-width: auto;
+                padding: 15px 20px;
+                border-radius: 0;
+                background: #fff;
+                top:10px!important;
+                box-shadow:0px 5px 12px rgba(0, 0, 0, .2);
+            }
+        }
+    }
+}
+
+
+.h_search_apps {
+    display: flex;
+    align-items: center;
+    .h_searchlink {
+        width: 40px;
+        height: 40px;
+        padding: 0px 5px;
+        text-align: center;
+        float: left;
+        svg{width:22px;}
+    }
+    ul {
+        padding: 0 0 0 15px;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        li:first-child a{border-radius:50px 0 0 50px;}
+        li:last-child a{border-radius:0 50px 50px 0; margin-left:-1px;}
+        a {
+            border: 1px solid #ddd;
+            display: block;
+            width: 55px;
+            height: 45px;
+            background-color:#fff!important;
+        }
+        .playstore_icon{
+            background:url(../../assets//img/svg/playstore.svg);
+            background-size: 23px;
+            background-repeat: no-repeat;
+            background-position:20px 9px;
+        }
+        .apple_icon{
+            background:url(../../assets//img/svg/apple.svg);
+            background-size: 23px;
+            background-repeat: no-repeat;
+            background-position: 12px 8px;
+        }
+    }
+}
+
+.h_left_col {
+    display: flex;
+    align-items: center;
+}
+
+.h_mid_col{flex-basis:0; flex-grow:1;}
+
+
+
+
+.wd_date {
+    color: #ddd;
+    font-size: 14px;
+    line-height: 30px;
+    position: relative;
+    padding-left: 24px;
+    &::before{
+        content:"";
+        background-image:url(../../assets/img/svg/time.svg);
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        background-size: 18px;
+        opacity: .5;
+        left: 0;
+        top: 6px;
+    }
+}
+
+
+.dropdown_menslink{
+    width:13.9%;
+    margin-bottom:10px;
+    float: left;
+    padding:0;
+    
+    list-style:none;
+    h3{
+        font-size:16px; font-weight: bold; margin:0; padding-bottom: 8px;
+        a{color:#000;}
+    }
+    li{
+        a{
+            color: #333;
+            font-size: 15px;
+            display: block;
+            line-height: 27px;
+            background-image:url(../../assets/img/svg/right-arrow.svg);
+            background-size: 5px;
+            background-repeat: no-repeat;
+            background-position: 0px 9px;
+            padding-left: 14px;
+        }
+    }
+}
+

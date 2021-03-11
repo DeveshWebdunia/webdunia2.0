@@ -1,0 +1,94 @@
+
+.horroscope_widget {
+    background: #FEF2A9;
+    border-radius: 5px;
+    padding: 20px 20px;
+    h3 {
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        a{color:#A50404;}
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding-top: 25px;
+        li:last-child::after{content:none;}
+        li{
+           
+            position: relative;
+            &::after{
+                content: "";
+                width: 1px;
+                height: 15px;
+                background: rgba(0, 0, 0, .3);
+                position: absolute;
+                right: 0;
+                top: 5px;
+            }
+            a {
+                color: #333;
+                font-size: 15px;
+                text-decoration: underline;
+                margin: 0 18px;
+            }
+        }
+    }
+}
+
+.horroscope_s_block {
+    display: flex;
+    .horr_s_col {
+        flex: 0 0 65px;
+        text-align:center;
+        .horr_s_icons {
+            width: 65px;
+            height: 65px;
+            background: #D93C3C;
+            display: block;
+            border-radius: 50px;
+        }
+        h4{
+            font-size:19px;
+            font-weight: 600;
+            padding-top: 8px;
+            margin: 0;
+            a{color:#000;}
+        }
+    }
+    .horr_s_info {
+        padding-left: 18px;
+        font-size:16px;
+        line-height:24px;
+    }
+}
+
+.horroscope_slide{
+    
+    .slick-arrow {
+            position: absolute;
+            right: 0;
+            top: -46px;
+            width: 28px;
+            height: 28px;
+            background-color:transparent;
+            border: 1px solid rgba(0, 0, 0, .3);
+            overflow: hidden;
+            text-indent: -200px;
+            background-image:url(../../assets/img/svg/right-arrow.svg);
+            background-size: 7px;
+            background-repeat: no-repeat;
+            background-position: 10px 7px;
+    }
+    .slick-prev {
+        right: 27px;
+        background-image:url(../../assets/img/svg/left-arrow.svg);
+        background-size: 7px;
+        background-repeat: no-repeat;
+        background-position: 8px 7px;
+    }
+}

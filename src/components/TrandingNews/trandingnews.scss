@@ -1,0 +1,48 @@
+
+.tranding_news_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    height:500px;
+    overflow: hidden;
+    .trn_n_blocks {
+        display: flex!important;
+        margin-bottom: 16px;
+        &:hover{
+            .n_tr_thumb img{
+                -webkit-transform:scale(1.08);
+                -moz-transform: scale(1.08);
+                -ms-transform: scale(1.08);
+                -o-transform: scale(1.08);
+                transform: scale(1.08);
+            }
+            h3 a{color:#A50404!important;}
+        }
+        .n_tr_thumb {
+            width: 100px;
+            display: block;
+            height: 85px;
+            flex: 0 0 110px;
+            background: #ddd;
+            border-radius:5px;
+            overflow: hidden;
+            img{width:110px;}
+        }
+        .n_tr_info {
+            padding-left: 12px; padding-top: 5px;
+            time{font-size:14px; color:#ADADAD;}
+            h3 {
+                font-size: 17px;
+                line-height: 24px;
+                a{
+                    color:#333;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+}
