@@ -1,6 +1,6 @@
 import React from 'react';
 import './bollywoodmasala.scss';
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 // import newsimg1 from '../../assets/img/1554038373-791.jpg';
 
 // import bollywood1 from '../../assets/img/bollywood/bollywood1.jpg';

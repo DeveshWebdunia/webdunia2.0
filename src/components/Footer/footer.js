@@ -1,4 +1,5 @@
 import React from 'react';
+import  Globals from '../../api' ;
 import './footer.scss';
 
 import { Nav , NavDropdown, Link } from 'react-bootstrap';
@@ -8,9 +9,54 @@ import android_app from '../../assets/img/android_app.png';
 import wd_logo_white from '../../assets/img/svg/wd_logo_w.svg';
 
 export default class Footer extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+              footerData : []
+         };
+      }
+      componentDidMount() {
+        const FooterConurl= Globals.Desktop_footer_based_api;
+        //console.log(HeaderConurl)
+        fetch(FooterConurl)
+        .then((res) => res.json())
+        .then((data) => {
+            //console.log(data)
+            this.setState({
+                footerData :data.NavigationMenu.Items
+            })
+        })
+
+      }
     render(){
+
+        let _navmenu = this.state.footerData;
+        const NavMenu = _navmenu.map((item, i ) =>
+        <div className="col-lg-2">
+        <div className="footer_widget">
+            <h3>{item.Text}</h3>
+            <ul className="footer_menus">
+            {/* <li>
+                <NavDropdown title="मुख्य ख़बरें" id="collasible-nav-dropdown">
+                    <NavDropdown.Item href="#">बॉलीवुड न्यूज़</NavDropdown.Item>
+                    <NavDropdown.Item href="#">मूवी रिव्यू</NavDropdown.Item>
+                </NavDropdown>
+            </li> */}
+              {item.Items.map((item, i ) => 
+                 <li><Nav.Link href={item.DefaultUrl}>{item.Text}</Nav.Link></li>
+              )}
+            {/* <li><Nav.Link href="#">करियर</Nav.Link></li>
+            <li><Nav.Link href="#">व्यापार</Nav.Link></li>
+            <li><Nav.Link href="#">टेक्नोलॉजी</Nav.Link></li>
+            <li><Nav.Link href="#">ऑटो मोबाइल</Nav.Link></li> */}
+            </ul>
+        </div>
+    </div>
+          );
+
         return(
             <div className="footer_seciton">
+               
                 <div className="footer_top_sect">
                     <div className="container">
                         <div className="apps_link">
@@ -37,7 +83,8 @@ export default class Footer extends React.Component{
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-lg-2">
+                            {NavMenu}
+                            {/* <div className="col-lg-2">
                                 <div className="footer_widget">
                                     <h3>समाचार</h3>
                                     <ul className="footer_menus">
@@ -135,7 +182,7 @@ export default class Footer extends React.Component{
                                     
                                     </ul>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>

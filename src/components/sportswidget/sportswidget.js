@@ -1,4 +1,4 @@
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 import React from 'react';
 import './sportswidget.scss';
 

@@ -1,41 +1,58 @@
 
 import React from 'react';
-
+import Globals from '../../api';
+import axios from 'axios';
 import './Marketwidget.scss';
 
-export default class MarketWidget extends React.Component{
-    render(){
-        return(
+export default class MarketWidget extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            market: []
+        };
+    }
+
+    getData() {
+        const url = Globals.language_based_api + '/home-page';
+        axios.get(url)
+            .then(res => {
+                const market = res.data.Contents;
+                this.setState({ market });
+            })
+    }
+
+    componentDidMount() {
+        this.getData();
+    }
+
+    render() {
+
+        let MarketData = this.state.market;
+        let MarketDataDetail = MarketData.filter((x) => x.Type == "Market");
+        const _MarketDataResult = MarketDataDetail.map((item, i) =>
             <div className="news_widget_panel market_h_w">
                 <div className="n_w_p_head">
-                    <h2><label>व्यापार</label></h2>
+                    <h2><label>{item.Title}</label></h2>
                 </div>
                 <div className="n_w_p_body">
                     <div className="market_widget_sect">
-                        <ul>
-                            <li>
-                                <span className="m_w_name">बीएसई</span>
-                                <span className="m_w_numb">44150</span>
-                                <span className="m_w_status down">110</span>
-                            </li>
-                            <li>
-                                <span className="m_w_name">एनएसई</span>
-                                <span className="m_w_numb">12969</span>
-                                <span className="m_w_status down">18</span>
-                            </li>
-                            <li>
-                                <span className="m_w_name">सोना</span>
-                                <span className="m_w_numb">48625</span>
-                                <span className="m_w_status up">108</span>
-                            </li>
-                            <li>
-                                <span className="m_w_name">चाँदी</span>
-                                <span className="m_w_numb">59882</span>
-                                <span className="m_w_status up">09</span>
-                            </li>
-                        </ul>
+                        {item.Items.map((item, i) =>
+                            <ul>
+                                <li>
+                                    <span className="m_w_name">{item.Title}</span>
+                                    <span className="m_w_numb">{item.Value}</span>
+                                    <span className={item.OnRise == true ? "m_w_status up" : "m_w_status down"}>{item.Change}</span>
+                                </li>
+                            </ul>
+                        )}
                     </div>
                 </div>
+            </div>
+        );
+        return (
+            <div>
+                { _MarketDataResult}
             </div>
         )
     }

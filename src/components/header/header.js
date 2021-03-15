@@ -3,7 +3,7 @@ import './header.scss';
 import logo from '../../assets/img/svg/h-logo.svg';
 import { Dropdown } from 'react-bootstrap';
 import Navigation from '../nav/nav';
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 export default class Header extends React.Component {
     constructor(props) {
         super(props);

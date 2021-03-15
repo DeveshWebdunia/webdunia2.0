@@ -1,7 +1,6 @@
 import React from 'react';
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 import './trandingnews.scss';
-
 import Slider from "react-slick";
 
 // import trand_img1 from '../../assets/img/tranding/trand_img1.jpg';
@@ -50,6 +49,10 @@ export default class TrandingNews extends React.Component{
         }; 
     let pagelist = this.state.data;
     let PagelistData = pagelist.filter((x)=>x.Title == "ट्रेंडिंग");
+    let PagelistDatas = pagelist.filter((x)=>x.Type == "PageList");
+    console.log("🚀 ~ file: trandingnews.js ~ line 53 ~ TrandingNews ~ render ~ PagelistDatas", PagelistDatas[0])
+    console.log("🚀 ~ file: trandingnews.js ~ line 53 ~ TrandingNews ~ render ~ PagelistData", PagelistData)
+    
  const _PagelistDataItemss = PagelistData.map((item, i ) =>    
  <div className="news_widget_panel top_news">
  <div className="n_w_p_head">

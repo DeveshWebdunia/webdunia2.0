@@ -36,7 +36,7 @@ function App() {
             <Link to="/category">Category Listing</Link>
           </li>
           <li>
-            <Link to="/photogallery">Photo Gallery</Link>
+            <Link to="/photo-gallery">Photo Gallery</Link>
           </li>
           <li>
             <Link to="/photodetail">Photo Detail</Link>
@@ -49,12 +49,20 @@ function App() {
           <img src={ads2} />
         </div>
 
-        <Route exact path="/" component={Home} />
-        <Route path="/articledetail" component={ArticleDetail} />
-        <Route path="/category" component={CategoryListing} />
-        <Route path="/photogallery" component={PhotoGallery} />
-        <Route path="/photodetail" component={PhotoDetail} />
-        <Route path="/astrology" component={Astrology} />
+        <Switch>
+      <Route exact path="/" component={Home}/>
+      <Route exact path="/home-page" component={Home}/>
+       {/* <Route exact path="/videos" component={Videos}/> */}
+       {/* <Route exact path="/static" component={Static}/>  */}
+       <Route exact path="/photo-gallery" component={PhotoGallery}/>
+       <Route exact path="/photodetail" component={PhotoDetail}/> 
+       <Route exact path="/astrology" component={Astrology}/> 
+      <Route exact path={/.{0,}([0-9])(\.html|\.htm).{0,}/gm } component={ArticleDetail}/>
+      <Route exact path="/articledetail" component={ArticleDetail}/>
+      {/* <Route exact path='/rss' component={Rss}/> */}
+      <Route exact path={/[\w\/_\-]+/g} component={CategoryListing}/> 
+      {/* <Route exact path="*" component={PageNotFound}/> */}
+     </Switch>
 
       </Router>
       

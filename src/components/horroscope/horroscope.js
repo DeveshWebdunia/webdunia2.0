@@ -1,6 +1,6 @@
 import React from 'react';
 import './horroscope.scss';
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 import Slider from "react-slick";
 
 export default class Horroscope extends React.Component{

@@ -1,6 +1,6 @@
 import React from 'react';
 import './nav.scss';
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 import { Nav , NavDropdown, Link } from 'react-bootstrap';
 
 export default class Navigation extends React.Component {

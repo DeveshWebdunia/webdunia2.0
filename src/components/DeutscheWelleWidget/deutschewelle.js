@@ -1,6 +1,6 @@
 import React from 'react';
 import './deutschewelle.scss';
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 import newsimg1 from '../../assets/img/1554038373-791.jpg';
 
 import deu_img1 from '../../assets/img/deu_img1.jpg';

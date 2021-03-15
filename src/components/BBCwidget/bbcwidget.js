@@ -1,6 +1,6 @@
 import React from 'react';
 import './bbcwidget.scss';
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 
 import bbc1 from '../../assets/img/bbc1.jpg';
 import bbc2 from '../../assets/img/bbc2.jpg';

@@ -1,7 +1,7 @@
 import React from 'react';
 import './jyotishwidget.scss';
 import Slider from "react-slick";
-import  Globals from '../api' ;
+import  Globals from '../../api' ;
 
 import jyotish_thumb from '../../assets/img/jyotish_thumb.png';
 import jyotish_thumb2 from '../../assets/img/jyotish_thumb2.png';
