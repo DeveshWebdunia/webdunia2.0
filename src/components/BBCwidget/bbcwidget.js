@@ -11,7 +11,7 @@ export default class BBCWidget extends React.Component {
            data : []
          };
       }
-    componentDidMount() {
+    componentDidMount() { 
             const url= Globals.language_based_api+'/home-page';
             fetch(url)
             .then((res) => res.json())
