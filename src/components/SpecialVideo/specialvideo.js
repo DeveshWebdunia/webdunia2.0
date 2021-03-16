@@ -1,7 +1,7 @@
 import React from 'react';
 import './specialvideo.scss';
 import Slider from "react-slick";
-
+import  Globals from '../../api' ;
 import videothumb1 from '../../assets/img/videothumb1.png';
 import videothumb2 from '../../assets/img/videothumb2.png';
 import videothumb3 from '../../assets/img/videothumb3.png';
@@ -15,7 +15,7 @@ export default class SpecialVideo extends React.Component{
         }
     }
     componentDidMount(){
-        const url = 'http://ws.webdunia.com/json/page?lang=hi&url=/videos';
+        const url= Globals.language_based_api+'/home-page';
         fetch(url)
         .then((res) => res.json())
         .then((data) => {

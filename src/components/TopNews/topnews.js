@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from "react-slick";
-
+import  Globals from '../../api' ;
 import './topnews.scss';
 import slider1 from '../../assets/img/slider_img1.png';
 
@@ -14,7 +14,7 @@ export default class TopNews extends React.Component{
         }
     }
     componentDidMount(){
-        const url = 'http://ws.webdunia.com/json/page?lang=hi&url=/home-page';
+         const url= Globals.language_based_api+'/home-page';
         fetch(url)
         .then((res) => res.json())
         .then((data) => {
