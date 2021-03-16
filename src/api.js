@@ -30,7 +30,7 @@ switch(Subdomain) {
                  LanguageCode = 'en';
         break;
         default:
-              LanguageCode = 'hi';
+              LanguageCode = 'mr';
   }
 //console.log('language code from switch ::' + LanguageCode);
 const Globals = {

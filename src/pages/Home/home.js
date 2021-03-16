@@ -25,8 +25,28 @@ import MarketWidget from '../../components/MarketWidget/Marketwidget';
 import CoronaTracker from '../../components/Coronatracker/Coronatracker';
 import OpinionWidget from '../../components/opinionwidget/Opinionwidget';
 import CricketUpdate from '../../components/CricketUpdate/Cricketupdate';
+import  Globals from '../../api' ;
 
 export default class Home extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+           data : []
+         };
+      }
+    componentDidMount() {
+        // console.log('api at header' + Globals.language_based_api);
+            const url= Globals.language_based_api+'/home-page';
+            fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+              
+                this.setState({
+                  data : data.Contents
+                })
+            })   
+          }
+    
     render() {
         return (
             <div className="home_wrapper">
@@ -39,7 +59,7 @@ export default class Home extends React.Component {
                             <TopNews />
                         </div>
                         <div className="col tranding_news">
-                            <TrandingNews />
+                            <TrandingNews dataFromParent = {this.state.data}/>
                         </div>
                         <div className="col ads_336">
                             <div className="m-b-15 cleafix"></div>

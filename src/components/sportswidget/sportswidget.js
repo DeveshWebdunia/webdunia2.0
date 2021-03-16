@@ -38,9 +38,10 @@ export default class SportWidget extends React.Component {
     render() {
 
         let pagelist = this.state.data;
-        let PagelistData = pagelist.filter((x)=>x.Title == "क्रिकेट");
-        console.log("🚀 ~ file: bollywoodmasala.js ~ line 38 ~ BollywoodMasala ~ render ~ PagelistData", PagelistData)
-     const _PagelistDataItemss = PagelistData.map((item, count ) =>    
+        let PagelistDataFull = pagelist.filter((x)=>x.Type == "PageList" );
+        let PagelistDatas = PagelistDataFull.slice(4,5);
+        console.log("🚀 ~ file: bollywoodmasala.js ~ line 38 ~ क्रिकेट ~ render ~ PagelistData", PagelistDatas)
+     const _PagelistDataItemss = PagelistDatas.map((item, count ) =>    
      <div className="news_widget_panel bollywood_masal_w">
      <div className="n_w_p_head">
      <h2><label>{item.Title}</label>

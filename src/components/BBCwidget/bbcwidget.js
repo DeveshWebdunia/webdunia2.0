@@ -2,10 +2,7 @@ import React from 'react';
 import './bbcwidget.scss';
 import  Globals from '../../api' ;
 
-import bbc1 from '../../assets/img/bbc1.jpg';
-import bbc2 from '../../assets/img/bbc2.jpg';
-import bbc3 from '../../assets/img/bbc3.jpg';
-import bbc4 from '../../assets/img/bbc4.jpg';
+
 
 export default class BBCWidget extends React.Component {
     constructor(props) {
@@ -28,11 +25,14 @@ export default class BBCWidget extends React.Component {
 
     render() {
         let pagelist = this.state.data;
-        let PagelistData = pagelist.filter((x)=>x.Title == "बीबीसी");
-     const _PagelistDataItemss = PagelistData.map((item, i ) =>    
+        let PagelistData = pagelist.filter((x)=>x.Type == "PageList");
+        //console.log("🚀 ~ file: bbcwidget.js ~ line 32 ~ BBCWidget ~ render ~ PagelistData", PagelistData)
+        let PagelistDatas = PagelistData.slice(9,10);
+        //console.log("🚀 ~ file: bbcwidget.js ~ line 34 ~ BBCWidget ~ render ~ PagelistDatas", PagelistDatas)
+     const _PagelistDataItemss = PagelistDatas.map((item, i ) =>    
      <div className="news_widget_panel bbcwidget">
      <div className="n_w_p_head">
-     <h2><label>{item.Title}</label></h2>
+     <h2><label>{item.Title}</label><span className="n_readmore"><a href={item.ViewAllUrl}>और भी पढ़ें</a></span></h2>
      </div>
      <div className="n_w_p_body">
     

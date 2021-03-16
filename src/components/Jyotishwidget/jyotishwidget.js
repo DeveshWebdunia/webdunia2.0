@@ -64,8 +64,12 @@ export default class Jyotishwidget extends React.Component{
         };
 
         let pagelist = this.state.data;
+        let PagelistDataFull = pagelist.filter((x)=>x.Type == "PageList" );
+        let PagelistDatas = PagelistDataFull.slice(1,2);
+    console.log("🚀 ~ file: trandingnews.js ~ line 53 ~ ज्योतिष ~ render ~ PagelistDataFull with spice", PagelistDatas)
+    
         let PagelistData = pagelist.filter((x)=>x.Title == "ज्योतिष");
-     const _PagelistDataItemss = PagelistData.map((item, i ) =>    
+     const _PagelistDataItemss = PagelistDatas.map((item, i ) =>    
      <div className="n_w_p_head">
      <h2><label>{item.Title}</label> <span className="n_readmore"><a href={item.ViewAllUrl}>और भी पढ़ें</a></span></h2>
      <div className="n_w_p_body">

@@ -47,13 +47,17 @@ export default class TrandingNews extends React.Component{
             
     
         }; 
-    let pagelist = this.state.data;
-    let PagelistData = pagelist.filter((x)=>x.Title == "ट्रेंडिंग");
-    let PagelistDatas = pagelist.filter((x)=>x.Type == "PageList");
-    console.log("🚀 ~ file: trandingnews.js ~ line 53 ~ TrandingNews ~ render ~ PagelistDatas", PagelistDatas[0])
-    console.log("🚀 ~ file: trandingnews.js ~ line 53 ~ TrandingNews ~ render ~ PagelistData", PagelistData)
+
+    //let pagelist = this.state.data;
+    let pagelist = this.props.dataFromParent ;
     
- const _PagelistDataItemss = PagelistData.map((item, i ) =>    
+    //let PagelistData = pagelist.filter((x)=>x.Title == "ट्रेंडिंग" );
+   
+    let PagelistDataFull = pagelist.filter((x)=>x.Type == "PageList" );
+    let PagelistDatas = PagelistDataFull.slice(0,1);
+    console.log("🚀 ~ file: trandingnews.js ~ line 53 ~ TrandingNews ~ render ~ PagelistDataFull with spice", PagelistDatas)
+    
+ const _PagelistDataItemss = PagelistDatas.map((item, i ) =>    
  <div className="news_widget_panel top_news">
  <div className="n_w_p_head">
  <h2><label>{item.Title}</label></h2>

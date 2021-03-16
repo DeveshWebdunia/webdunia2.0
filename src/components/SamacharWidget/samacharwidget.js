@@ -1,50 +1,55 @@
 import React from 'react';
 import './samacharwidget.scss';
+import  Globals from '../../api' ;
 
-import samachar1 from '../../assets/img/samachar1.jpg';
-import samachar2 from '../../assets/img/samachar2.jpg';
-import samachar3 from '../../assets/img/samachar3.jpg';
-import samachar4 from '../../assets/img/samachar4.jpg';
 
 export default class SamacharWidget extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+           data : []
+         };
+      }
+    componentDidMount() {
+            const url= Globals.language_based_api+'/home-page';
+            fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+              
+                this.setState({
+                  data : data.Contents
+                })
+            })   
+          }
     render() {
+        let pagelist = this.state.data;
+        let PagelistData = pagelist.filter((x)=>x.Type == "PageList");
+        console.log("🚀 ~ file: bbcwidget.js ~ line 32 ~ efkregrejg ~ render ~ PagelistData", PagelistData)
+        let PagelistDatas = PagelistData.slice(8,9);
+        //console.log("🚀 ~ file: bbcwidget.js ~ line 34 ~ BBCWidget ~ render ~ PagelistDatas", PagelistDatas)
+     const _PagelistDataItemss = PagelistDatas.map((item, i ) =>    
+     <div className="news_widget_panel samacharwidget">
+     <div className="n_w_p_head">
+     <h2><label>{item.Title}</label><span className="n_readmore"><a href={item.ViewAllUrl}>और भी पढ़ें</a></span></h2>
+     </div>
+     <div className="n_w_p_body">
+    
+
+      {item.Pages.map((item, i ) => 
+             <div className="news_block_l">
+             <div className="n_block_l_thumb"><a href={item.Url}><img  class="lazy" src={item.Image || item.Thumbnail } alt={item.Title} title={item.Title}/></a></div>
+             <div className="n_block_l_cont">
+             <time>{item.PublishedDate || item.PublishDate}</time>    
+             <h2><a href={item.Url}>{item.Title}</a></h2>                     
+             </div>       
+         </div>	
+          )}
+        </div>
+      </div>
+       );
         return (
-            <div className="news_widget_panel samacharwidget">
-                <div className="n_w_p_head">
-                    <h2><label>समाचार</label><span className="n_readmore"><a href="#">और भी पढ़ें</a></span></h2>
-                </div>
-                <div className="n_w_p_body">
-                    <div className="news_block_l">
-                        <div className="n_block_l_thumb"><a href="#"><img src={samachar1} /></a></div>
-                        <div className="n_block_l_cont">
-                            <time>25 सितंबर 2020</time>
-                            <h2><a href="#">चुनिंदा देशों के बीच नहीं हो सकती वैश्विक विकास पर चर्चा : मोदी</a></h2>
-                        </div>
-                    </div>
-                    <div className="news_block_l">
-                        <div className="n_block_l_thumb"><a href="#"><img src={samachar2} /></a></div>
-                        <div className="n_block_l_cont">
-                            <time>25 सितंबर 2020</time>
-                            <h2><a href="#">Kisan Andolan : किसानों ने शुरू की 1 दिन की 'क्रमिक' भूख हड़ताल</a></h2>
-                        </div>
-                    </div>
-                    <div className="news_block_l">
-                        <div className="n_block_l_thumb"><a href="#"><img src={samachar3} /></a></div>
-                        <div className="n_block_l_cont">
-                            <time>25 सितंबर 2020</time>
-                            <h2><a href="#">बंगाल में भाजपा की सुनामी, विजयवर्गीय का प्रशांत किशोर पर पलटवार</a></h2>
-                        </div>
-                    </div>
-                    <div className="news_block_l">
-                        <div className="n_block_l_thumb"><a href="#"><img src={samachar4} /></a></div>
-                        <div className="n_block_l_cont">
-                            <time>25 सितंबर 2020</time>
-                            <h2><a href="#">TMC के रणनीतिकार प्रशांत किशोर का दावा, बंगाल चुनाव में BJP ने किया दहाई का आंकड़ा पार तो छोड़ दूंगा काम</a></h2>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        )
+           <div>
+               {_PagelistDataItemss}
+           </div>      )
     }
 }
