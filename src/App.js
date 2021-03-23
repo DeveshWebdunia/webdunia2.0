@@ -16,16 +16,21 @@ import CategoryListing from './pages/categorylisting/categorylisting';
 import Home from './pages/Home/home';
 import PhotoDetail from './pages/Photodetail/photodetail';
 import PhotoGallery from './pages/Photogallery/photogallery';
+import RSS from './pages/rss';
 import Header from './components/header/header';
 import './assets/scss/responsive.scss';
 import Astrology from './pages/Astrology/Astrology';
 function App() {
+  
   return (
     <div className="App">
+
+      {/* header component  */}
       <Header />
-      {/* <Header2/> */}
+
+      
       <Router >
-        <ul className="nav_fix">
+        {/* <ul className="nav_fix">
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -44,10 +49,10 @@ function App() {
           <li>
             <Link to="/astrology">Astrology</Link>
           </li>
-        </ul>
+        </ul>*/}
         <div className="full_ads_block">
           <img src={ads2} />
-        </div>
+        </div> 
 
         <Switch>
       <Route exact path="/" component={Home}/>
@@ -59,8 +64,9 @@ function App() {
        <Route exact path="/astrology" component={Astrology}/> 
       <Route exact path={/.{0,}([0-9])(\.html|\.htm).{0,}/gm } component={ArticleDetail}/>
       <Route exact path="/articledetail" component={ArticleDetail}/>
+      {/* <Route exact path='/RSS.xml' component={RSS}/>  */}
       {/* <Route exact path='/rss' component={Rss}/> */}
-      <Route exact path={/[\w\/_\-]+/g} component={CategoryListing}/> 
+      <Route exact path={/[\w\/_\-]+/g} component={CategoryListing}/>
       {/* <Route exact path="*" component={PageNotFound}/> */}
      </Switch>
 

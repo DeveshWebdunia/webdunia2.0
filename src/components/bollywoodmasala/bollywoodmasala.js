@@ -1,41 +1,12 @@
 import React from 'react';
 import './bollywoodmasala.scss';
-import  Globals from '../../api' ;
-// import newsimg1 from '../../assets/img/1554038373-791.jpg';
-
-// import bollywood1 from '../../assets/img/bollywood/bollywood1.jpg';
-// import bollywood2 from '../../assets/img/bollywood/bollywood2.jpg';
-// import bollywood3 from '../../assets/img/bollywood/bollywood3.jpg';
-// import bollywood4 from '../../assets/img/bollywood/bollywood4.jpg';
-// import bollywood5 from '../../assets/img/bollywood/bollywood5.jpg';
-// import bollywood6 from '../../assets/img/bollywood/bollywood6.jpg';
-// import bollywood7 from '../../assets/img/bollywood/bollywood7.jpg';
 
 export default class BollywoodMasala extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-           data : []
-         };
-      }
-    componentDidMount() {
-        // console.log('api at header' + Globals.language_based_api);
-            const url= Globals.language_based_api+'/home-page';
-            fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-              
-                this.setState({
-                  data : data.Contents
-                })
-            })   
-          }
 
     render() {
-        let pagelist = this.state.data;
+        let pagelist =  this.props.dataFromParent;
         let PagelistData = pagelist.filter((x)=>x.Type == "PageList");
         let PagelistDatas = PagelistData.slice(2,3);
-        console.log("🚀 ~ file: bollywoodmasala.js ~ line 38 ~ BollywoodMasala ~ render ~ PagelistData", PagelistDatas)
      const _PagelistDataItemss = PagelistDatas.map((item, count ) =>    
      <div className="news_widget_panel bollywood_masal_w">
      <div className="n_w_p_head">

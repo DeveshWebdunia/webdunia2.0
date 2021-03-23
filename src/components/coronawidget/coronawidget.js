@@ -1,31 +1,9 @@
 import React from 'react';
 import Slider from "react-slick";
-import coronathumb from '../../assets/img/coronathumb.jpg';
 import './coronawidget.scss';
-import  Globals from '../../api' ;
 
 export default class Coronawidget extends React.Component{
-
-    constructor(props) {
-        super(props);
-        this.state = {
-           data : []
-         };
-      }
-    componentDidMount() {
-        // console.log('api at header' + Globals.language_based_api);
-            const url= Globals.language_based_api+'/home-page';
-            fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-              
-                this.setState({
-                  data : data.Contents
-                })
-            })   
-          }
-  
-    render(){
+ render(){
         const settings = {
             dots: false,
             infinite: true,
@@ -34,10 +12,10 @@ export default class Coronawidget extends React.Component{
             slidesToScroll: 1,
             fade: true
             };
-        let pagelist = this.state.data;
+        let pagelist =  this.props.dataFromParent;
         let PagelistDataFull = pagelist.filter((x)=>x.Type == "PageList" );
         let PagelistDatas = PagelistDataFull.slice(3,4);
-        console.log("🚀 ~ file: bollywoodmasala.js ~ line 38 ~ CORONA ~ render ~ PagelistData", PagelistDatas)
+        //console.log("🚀 ~ file: bollywoodmasala.js ~ line 38 ~ CORONA ~ render ~ PagelistData", PagelistDatas)
 
 
         const _PagelistDataItemss = PagelistDatas.map((item, i ) =>    

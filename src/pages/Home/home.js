@@ -1,6 +1,6 @@
 import React from 'react';
 import './home.scss';
-
+import { Helmet } from "react-helmet";
 import ads4 from '../../assets/img/ads4.png';
 import ads5 from '../../assets/img/ads5.png';
 import ads1 from '../../assets/img/ads1.png';
@@ -31,8 +31,39 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-           data : []
+           data : [],
+           videos : [],
+           meta : [] ,
+           title : [],
+           meta_keywords : [],
+           meta_description : [],
+           CricketData :[]
+
          };
+      }
+
+      getVideos(){
+        const url= Globals.language_based_api+'/videos';
+        fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            
+            this.setState({
+              videos : data.Contents.out
+            })
+        })   
+      }
+      getCricketUpdate(){
+        const url= Globals.Cricket_update_api;
+        console.log("🚀 ~ file: home.js ~ line 58 ~ Home ~ getCricketUpdate ~ url", url)
+        fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            this.setState({
+              CricketData : data,
+              
+            })
+        })   
       }
     componentDidMount() {
         // console.log('api at header' + Globals.language_based_api);
@@ -42,21 +73,32 @@ export default class Home extends React.Component {
             .then((data) => {
               
                 this.setState({
-                  data : data.Contents
+                  data : data.Contents,
+                  meta : data.Meta ,
+                  title : data.Title,
+                  meta_keywords : data.Meta.keywords.Attributes.content,
+                  meta_description : data.Meta.description.Attributes.content
                 })
-            })   
+            }) 
+        this.getVideos();  
+        this.getCricketUpdate();
           }
     
     render() {
         return (
             <div className="home_wrapper">
+                <Helmet>
+                <title>{this.state.title}</title>
+                <meta name="keywords" content={this.state.meta_keywords} />
+                <meta name="description" content={this.state.meta_description} />
+                </Helmet>
                 <div className="container">
-                    <CoronaTracker/>
+                    <CoronaTracker />
                 </div>
                 <section className="container">
                     <div className="row">
                         <div className="col top_news">
-                            <TopNews />
+                            <TopNews dataFromParent = {this.state.data}/>
                         </div>
                         <div className="col tranding_news">
                             <TrandingNews dataFromParent = {this.state.data}/>
@@ -65,27 +107,27 @@ export default class Home extends React.Component {
                             <div className="m-b-15 cleafix"></div>
                             <div className="ads_block"><img src={ads4} /></div>
                             <div className="m-b-15"></div>
-                            <Horroscope />
+                            <Horroscope dataFromParent = {this.state.data}/>
                         </div>
                     </div>
                 </section>
                 <div className="m-t-15">
-                <SpecialVideo />
+                <SpecialVideo dataFromParent = {this.state.videos}/>
                 </div>
 
                 <section className="h_section3 m-t-20">
                     <div className="container">
                         <div className="row">
                             <div className="col h_l_col">
-                                <BollywoodMasala />
+                                <BollywoodMasala dataFromParent = {this.state.data}/>
                                 <div className="ads_block m-t-10 m-b-10"><img src={ads1} /></div>
-                                <Jyotishwidget />
+                                <Jyotishwidget dataFromParent = {this.state.data}/>
                             </div>
                             <div className="col h_r_col">
-                                <CricketUpdate/>
+                                <CricketUpdate dataFromParent = {this.state.CricketData}/>
                                 <div className="m-b-15"></div>
                                 <div className="m-b-15"></div>
-                                <Coronawidget />
+                                <Coronawidget dataFromParent = {this.state.data}/>
                                 
                             </div>
                         </div>
@@ -94,7 +136,7 @@ export default class Home extends React.Component {
 
                 <section className="grey_bg padding15">
                     <div className="container">
-                        <SportWidget />
+                        <SportWidget dataFromParent = {this.state.data}/>
                     </div>
                 </section>
 
@@ -102,13 +144,13 @@ export default class Home extends React.Component {
                     <div className="container">
                         <div className="row">
                             <div className="col-sm-12 col-md-12 col-lg-4">
-                                <DeutscheWelleWidget/>
+                                <DeutscheWelleWidget dataFromParent = {this.state.data}/>
                             </div>
                             <div className="col-sm-12 col-md-12 col-lg-4">
-                                <BBCWidget/>
+                                <BBCWidget dataFromParent = {this.state.data}/>
                             </div>
                             <div className="col-sm-12 col-md-12 col-lg-4">
-                                <SamacharWidget/>
+                                <SamacharWidget dataFromParent = {this.state.data}/>
                             </div>
                         </div>
                     </div>
@@ -119,19 +161,20 @@ export default class Home extends React.Component {
                 <div className='container m-t-20'>
                     <div className='row'>
                         <div className='col'>
-                            <BloggerWidget/>
+                            <BloggerWidget dataFromParent = {this.state.data}/>
                             <div className="ads_block m-t-20 m-b-10"><img src={ads1} /></div>
                             <div className="m-b-20 cleafix"></div>
                             <div className="row">
-                                <div className="col-sm-12 col-md-12 col-lg-6"><BBCWidget/></div>
-                                <div className="col-sm-12 col-md-12 col-lg-6"><BBCWidget/></div>
+                                <div className="col-sm-12 col-md-12 col-lg-6"><BBCWidget dataFromParent = {this.state.data}/></div>
+                                <div className="col-sm-12 col-md-12 col-lg-6"><BBCWidget dataFromParent = {this.state.data}/></div>
+                                
                             </div>
                             <div className="ads_block m-t-20 m-b-10"><img src={ads6} /></div>
                         </div>
                         <div className='col h_r_col'>
-                            <MarketWidget/>
+                            <MarketWidget dataFromParent = {this.state.data}/>
                             <div className="m-b-15 cleafix"></div>
-                            <OpinionWidget/>
+                            <OpinionWidget dataFromParent = {this.state.data}/>
                         </div>
                         
                     </div>

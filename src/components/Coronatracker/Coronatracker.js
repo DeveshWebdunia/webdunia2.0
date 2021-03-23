@@ -46,12 +46,6 @@ export default class CoronaTracker extends React.Component{
                 </div>
                 <div className="coron_t_col">
                     {Corona}
-                    {/* <div className="corona_t_info">
-                        <span className="confirm"><b>Total Confirmed</b><strong>{CoronaData}</strong></span>
-                        <span className="active_case"><b>Active Cases</b><strong>4,46,952</strong></span>
-                        <span className="recovered"><b>Recovered</b><strong>88,47,600</strong></span>
-                        <span className="deaths"><b>Total Deaths</b><strong>1,37,139</strong></span>
-                    </div> */}
                 </div>
                 <div className="coron_t_col">
                     <a href="#" className="coro_t_link">COVID-19 News</a>

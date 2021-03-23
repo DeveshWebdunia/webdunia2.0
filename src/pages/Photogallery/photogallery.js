@@ -14,11 +14,60 @@ import p_l_img6 from '../../assets/img/p_l_img6.png';
 
 import Coronawidget from '../../components/coronawidget/coronawidget';
 import Horroscope from '../../components/horroscope/horroscope';
-
+import  Globals from '../../api' ;
 export default class PhotoGallery extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+           data : [],
+           videos : [],
+           meta : [] ,
+           title : [],
+           meta_keywords : [],
+           meta_description : [],
+           CricketData :[]
+
+         };
+      }
+    componentDidMount() {
+        // console.log('api at header' + Globals.language_based_api);
+            const url= Globals.language_based_api+'/photo-gallery';
+            fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+            
+                this.setState({
+                  data : data.Contents,
+                  meta : data.Meta ,
+                  title : data.Title,
+                  meta_keywords : data.Meta.keywords.Attributes.content,
+                  meta_description : data.Meta.description.Attributes.content
+                })
+            }) 
+          }
     render(){
+        let PhotoState = this.state.data;
+        let  PhotoContent = PhotoState.filter((x)=>x.Type === "MultipleCategoryPhotoGalleryList");
+        console.log("🚀 ~ file: photogallery.js ~ line 37 ~ PhotoGallery ~ render ~ PhotoContent", PhotoContent)
+        const PhotoContentItems = PhotoContent.map((item, i ) =>{
+        if(i == 0 ){
+             return(
+                <li> <div className="photo_gall_m_block">
+                    <a href="#"><img src={item.Image}/></a>
+                         <div className="photo_gall_capt">
+                              <a href={item.CategoryUrl} className="photo_category">{item.CategoryName}</a>
+                      <h2><a href="#">{item.GalleryTitle}</a></h2>
+                  </div>   
+                 </div></li>
+            )
+             }
+        <div>
+        
+      </div>
+        });
         return(
             <div>
+                {PhotoContentItems}
                 <div className="container padding15">
                     <div className="row">
                         <div className="col">
@@ -231,7 +280,7 @@ export default class PhotoGallery extends React.Component{
                             <div className="ads_block m-b-15"><img src={ads5} /></div>
                             <Horroscope/>
                             <div className="ads_block m-b-15 m-t-15"><img src={ads5} /></div>
-                            <Coronawidget/>
+                            {/* <Coronawidget/> */}
                         </div>
                     </div>
                 </div>

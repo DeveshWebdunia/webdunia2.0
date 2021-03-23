@@ -1,32 +1,10 @@
 import React from 'react';
 import './jyotishwidget.scss';
 import Slider from "react-slick";
-import  Globals from '../../api' ;
 
-import jyotish_thumb from '../../assets/img/jyotish_thumb.png';
-import jyotish_thumb2 from '../../assets/img/jyotish_thumb2.png';
-import jyotish_thumb3 from '../../assets/img/jyotish_thumb3.png';
-import jyotish_thumb4 from '../../assets/img/jyotish_thumb4.png';
 
 export default class Jyotishwidget extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-           data : []
-         };
-      }
-      componentDidMount() {
-        // console.log('api at header' + Globals.language_based_api);
-            const url= Globals.language_based_api+'/home-page';
-            fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-              
-                this.setState({
-                  data : data.Contents
-                })
-            })   
-          }
+   
     render(){
         const settings = {
             dots: false,
@@ -63,12 +41,9 @@ export default class Jyotishwidget extends React.Component{
             ]
         };
 
-        let pagelist = this.state.data;
+        let pagelist = this.props.dataFromParent;
         let PagelistDataFull = pagelist.filter((x)=>x.Type == "PageList" );
         let PagelistDatas = PagelistDataFull.slice(1,2);
-    console.log("🚀 ~ file: trandingnews.js ~ line 53 ~ ज्योतिष ~ render ~ PagelistDataFull with spice", PagelistDatas)
-    
-        let PagelistData = pagelist.filter((x)=>x.Title == "ज्योतिष");
      const _PagelistDataItemss = PagelistDatas.map((item, i ) =>    
      <div className="n_w_p_head">
      <h2><label>{item.Title}</label> <span className="n_readmore"><a href={item.ViewAllUrl}>और भी पढ़ें</a></span></h2>
@@ -92,46 +67,6 @@ export default class Jyotishwidget extends React.Component{
         
         return(
             <div className="news_widget_panel jyotish_w">
-                {/* {_PagelistDataItemss} */}
-                {/* <div className="n_w_p_head">
-                    <h2><label>ज्योतिष</label> <span className="n_readmore"><a href="#">और भी पढ़ें</a></span></h2>
-                </div>
-                <div className="n_w_p_body">
-                    <div className="jyotish_news_slider">
-                        <Slider {...settings}>
-                        <div>
-                            <div className="jyotish_news_block">
-                                <a href="#"><img src={jyotish_thumb}/></a>
-                                <h2><a href="#">30 नवंबर 2020 कार्तिक पूर्णिमा, राशि अनुसार खास...</a></h2>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="jyotish_news_block">
-                                <a href="#"><img src={jyotish_thumb2}/></a>
-                                <h2><a href="#">इस बार की कार्तिक पूर्णिमा है ज्योतिष की दृष्टि से महत्वपूर्ण</a></h2>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="jyotish_news_block">
-                                <a href="#"><img src={jyotish_thumb3}/></a>
-                                <h2><a href="#">तुरंत जांचें, कहीं आपकी कुंडली में शनि का शश योग तो नहीं है?</a></h2>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="jyotish_news_block">
-                                <a href="#"><img src={jyotish_thumb4}/></a>
-                                <h2><a href="#">शुक्र प्रदोष व्रत : किस समय करें भोलेनाथ का पूजन, जानिए शुभ मुहूर्त</a></h2>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="jyotish_news_block">
-                                <a href="#"><img src={jyotish_thumb2}/></a>
-                                <h2><a href="#">30 नवंबर 2020 कार्तिक पूर्णिमा, राशि अनुसार खास...</a></h2>
-                            </div>
-                        </div>
-                        </Slider>
-                    </div>
-                </div> */}
                 {_PagelistDataItemss}
             </div>
         )

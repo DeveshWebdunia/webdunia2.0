@@ -1,34 +1,10 @@
-
 import React from 'react';
-import Globals from '../../api';
-import axios from 'axios';
 import './Marketwidget.scss';
 
 export default class MarketWidget extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            market: []
-        };
-    }
-
-    getData() {
-        const url = Globals.language_based_api + '/home-page';
-        axios.get(url)
-            .then(res => {
-                const market = res.data.Contents;
-                this.setState({ market });
-            })
-    }
-
-    componentDidMount() {
-        this.getData();
-    }
-
     render() {
 
-        let MarketData = this.state.market;
+        let MarketData =  this.props.dataFromParent;
         let MarketDataDetail = MarketData.filter((x) => x.Type == "Market");
         const _MarketDataResult = MarketDataDetail.map((item, i) =>
             <div className="news_widget_panel market_h_w">

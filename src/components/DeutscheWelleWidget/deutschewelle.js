@@ -1,33 +1,10 @@
 import React from 'react';
 import './deutschewelle.scss';
-import  Globals from '../../api' ;
-
-
 export default class DeutscheWelleWidget extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-           data : []
-         };
-      }
-    componentDidMount() {
-            const url= Globals.language_based_api+'/home-page';
-            fetch(url)
-            .then((res) => res.json())
-            .then((data) => {
-              
-                this.setState({
-                  data : data.Contents
-                })
-            })   
-          }
     render() {
-
-        let pagelist = this.state.data;
+        let pagelist =  this.props.dataFromParent;
         let PagelistData = pagelist.filter((x)=>x.Type == "PageList");
-        console.log("🚀 ~ file: bbcwidget.js ~ line 32 ~ efkregrejg ~ render ~ PagelistData", PagelistData)
         let PagelistDatas = PagelistData.slice(10,11);
-        //console.log("🚀 ~ file: bbcwidget.js ~ line 34 ~ BBCWidget ~ render ~ PagelistDatas", PagelistDatas)
      const _PagelistDataItemss = PagelistDatas.map((item, i ) =>    
      <div className="news_widget_panel deutschewidget">
      <div className="n_w_p_head">

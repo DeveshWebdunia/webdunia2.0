@@ -7,7 +7,7 @@ import team2 from '../../assets/img/pak.png';
 import batting from '../../assets/img/batting.png';
 import ball from '../../assets/img/ball.png';
 
-export default function CricketUpdate() {
+export default function CricketUpdate({ dataFromParent }) {
     const [activeId, setActiveId] = useState('0');
 
     function toggleActive(id) {
@@ -17,6 +17,9 @@ export default function CricketUpdate() {
             setActiveId(id);
         }
     }
+    
+    console.log("🚀 ~ file: Cricketupdate.js ~ line 21 ~ CricketUpdate ~ data", dataFromParent)
+    
     return (
         <>
             <div className="cricketupdate_panel">

@@ -8,8 +8,24 @@ export default class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-              headerData : []
+              headerData : [],
+              language : [],
+              languages : []
          };
+      }
+      getLanguage(){
+        const LanguageAPI= Globals.language_based_api;
+        //console.log(LanguageAPI)
+        fetch(LanguageAPI)
+        .then((res) => res.json())
+        .then((data) => {
+            //console.log(data)
+            this.setState({
+               language : data.Contents[0].Language,
+               languages: data.Contents[0].Languages
+
+            })
+        })   
       }
       componentDidMount() {
         const HeaderConurl= Globals.Desktop_header_based_api;
@@ -22,16 +38,23 @@ export default class Header extends React.Component {
                 headerData :data.NavigationMenu.Items
             })
         })
-
+        this.getLanguage();
       }
+      
     render() {
+        //language 
+        let _languagename = this.state.language;
+        let _languageSlider = this.state.languages;
         //date
         var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         var today  = new Date();
         //toggle 
         
         
-
+        // const LangNames = _languageSlider.map((item , i)  =>
+        
+        // <li key = {i} ><a href='#' title={item.Code} languageCode={item.Name} >{item.Name}</a></li>
+        //   );
         
         let _navmenu = this.state.headerData;
         const NavMenu = _navmenu.map((item, i ) =>
@@ -46,6 +69,10 @@ export default class Header extends React.Component {
            
             </ul>
           );
+          const LangNames = _languageSlider.map((item , i)  => 
+            <li key = {i} ><a className={(_languagename.Name == item.Name)? 'active' : ''} href='#' title={item.Name} languageCode={item.Code} >{item.Name}</a></li>
+            );
+
         return (
             <div className="header_section">
                 <div className="h_top_sect">
@@ -55,14 +82,15 @@ export default class Header extends React.Component {
                             <div className="wd_lang">
                                 <ul>
                                     <li><span>Choose your language</span></li>
-                                    <li><a className="active" href="#">हिंदी</a> </li>
+                                    {LangNames}
+                                    {/* <li><a className="active" href="#">हिंदी</a> </li>
                                     <li><a href="#">தமிழ்</a> </li>
                                     <li><a href="#">मराठी</a> </li>
                                     <li><a href="#">తెలుగు</a> </li>
                                     <li><a href="#">മലയാളം</a> </li>
                                     <li><a href="#">ಕನ್ನಡ</a> </li>
                                     <li><a href="#">ગુજરાતી</a> </li>
-                                    <li><a href="#">English</a> </li>
+                                    <li><a href="#">English</a> </li> */}
                                 </ul>
                             </div>
                             <div className="h_top_rightsect">
