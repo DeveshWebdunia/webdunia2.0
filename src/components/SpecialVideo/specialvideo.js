@@ -10,7 +10,7 @@ export default class SpecialVideo extends React.Component{
         }
     }
     componentDidMount(){
-        const url = 'http://ws.webdunia.com/json/page?lang=hi&url=/videos';
+        const url = 'https://ws.webdunia.com/json/page?lang=hi&url=/videos';
         fetch(url)
         .then((res) => res.json())
         .then((data) => {
